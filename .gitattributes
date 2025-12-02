@@ -1,0 +1,7 @@
+*.png filter=lfs diff=lfs merge=lfs -text
+*.lvproj binary
+*.lvlib binary
+*.lvclass binary
+*.lvbitx binary
+*.vipc filter=lfs diff=lfs merge=lfs -text
+*.lvbitx filter=lfs diff=lfs merge=lfs -text

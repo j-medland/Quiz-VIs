@@ -1,5 +1,8 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
-<Project Type="Project" LVVersion="25008000">
+<Project Type="Project" LVVersion="20008000">
+	<Property Name="NI.LV.All.SaveVersion" Type="Str">20.0</Property>
+	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
+	<Property Name="NI.Project.Description" Type="Str"></Property>
 	<Property Name="SMProvider.SMVersion" Type="Int">201310</Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="IOScan.Faults" Type="Str"></Property>
@@ -24,12 +27,16 @@
 			<Item Name="State.ctl" Type="VI" URL="../State.ctl"/>
 			<Item Name="Team.ctl" Type="VI" URL="../Team.ctl"/>
 		</Item>
+		<Item Name="slides" Type="Folder" URL="../slides">
+			<Property Name="NI.DISK" Type="Bool">true</Property>
+		</Item>
 		<Item Name="SubVIs" Type="Folder">
 			<Item Name="Button Press Event.vi" Type="VI" URL="../Button Press Event.vi"/>
 			<Item Name="Button Press Listener.vi" Type="VI" URL="../Button Press Listener.vi"/>
 			<Item Name="Button Reset.vi" Type="VI" URL="../Button Reset.vi"/>
 			<Item Name="Buzzer.vi" Type="VI" URL="../Buzzer.vi"/>
 			<Item Name="Fire Buzzer.vi" Type="VI" URL="../Fire Buzzer.vi"/>
+			<Item Name="Load Slide Images from Disk.vi" Type="VI" URL="../Load Slide Images from Disk.vi"/>
 			<Item Name="Set Team names.vi" Type="VI" URL="../Set Team names.vi"/>
 		</Item>
 		<Item Name="Quiz Scoreboard and Slides.vi" Type="VI" URL="../Quiz Scoreboard and Slides.vi"/>
@@ -88,26 +95,10 @@
 				<Property Name="DistPart[0].productID" Type="Str">{1FF8773A-E156-45AA-9823-C23B2BE00FAB}</Property>
 				<Property Name="DistPart[0].productName" Type="Str">NI-DAQmx Runtime 17.6</Property>
 				<Property Name="DistPart[0].upgradeCode" Type="Str">{923C9CD5-A0D8-4147-9A8D-998780E30763}</Property>
-				<Property Name="DistPart[1].flavorID" Type="Str">DefaultFull</Property>
-				<Property Name="DistPart[1].productID" Type="Str">{3CA98582-E0C0-4421-B42A-DE5AADA8779E}</Property>
-				<Property Name="DistPart[1].productName" Type="Str">NI LabVIEW Runtime 2025 Q3 Patch 2 (64-bit)</Property>
-				<Property Name="DistPart[1].SoftDep[0].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[1].SoftDep[0].productName" Type="Str">NI ActiveX Container (64-bit)</Property>
-				<Property Name="DistPart[1].SoftDep[0].upgradeCode" Type="Str">{1038A887-23E1-4289-B0BD-0C4B83C6BA21}</Property>
-				<Property Name="DistPart[1].SoftDep[1].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[1].SoftDep[1].productName" Type="Str">NI Logos 25.3</Property>
-				<Property Name="DistPart[1].SoftDep[1].upgradeCode" Type="Str">{5E4A4CE3-4D06-11D4-8B22-006008C16337}</Property>
-				<Property Name="DistPart[1].SoftDep[2].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[1].SoftDep[2].productName" Type="Str">NI mDNS Responder 25.5</Property>
-				<Property Name="DistPart[1].SoftDep[2].upgradeCode" Type="Str">{9607874B-4BB3-42CB-B450-A2F5EF60BA3B}</Property>
-				<Property Name="DistPart[1].SoftDep[3].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[1].SoftDep[3].productName" Type="Str">NI VC2015 Runtime</Property>
-				<Property Name="DistPart[1].SoftDep[3].upgradeCode" Type="Str">{D42E7BAE-6589-4570-B6A3-3E28889392E7}</Property>
-				<Property Name="DistPart[1].SoftDep[4].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[1].SoftDep[4].productName" Type="Str">NI TDM Streaming 25.3</Property>
-				<Property Name="DistPart[1].SoftDep[4].upgradeCode" Type="Str">{4CD11BE6-6BB7-4082-8A27-C13771BC309B}</Property>
-				<Property Name="DistPart[1].SoftDepCount" Type="Int">5</Property>
-				<Property Name="DistPart[1].upgradeCode" Type="Str">{A87DB6EF-77CB-397F-A762-D95F372FCAD4}</Property>
+				<Property Name="DistPart[1].flavorID" Type="Str"></Property>
+				<Property Name="DistPart[1].productID" Type="Str"></Property>
+				<Property Name="DistPart[1].productName" Type="Str">NI LabVIEW Run-Time Engine 2020</Property>
+				<Property Name="DistPart[1].upgradeCode" Type="Str">{D84FC73F-D1E0-4C05-A30C-DB882CD1ABD8}</Property>
 				<Property Name="DistPartCount" Type="Int">2</Property>
 				<Property Name="INST_autoIncrement" Type="Bool">true</Property>
 				<Property Name="INST_buildLocation" Type="Path">../LabVIEW Quiz Installer</Property>
@@ -116,8 +107,8 @@
 				<Property Name="INST_defaultDir" Type="Str">{4094CCC8-65F2-48B8-B224-DF4114553F7C}</Property>
 				<Property Name="INST_productName" Type="Str">Scoreboard</Property>
 				<Property Name="INST_productVersion" Type="Str">1.0.3</Property>
-				<Property Name="InstSpecBitness" Type="Str">64-bit</Property>
-				<Property Name="InstSpecVersion" Type="Str">25328002</Property>
+				<Property Name="InstSpecBitness" Type="Str">32-bit</Property>
+				<Property Name="InstSpecVersion" Type="Str">20000000</Property>
 				<Property Name="MSI_autoselectDrivers" Type="Bool">true</Property>
 				<Property Name="MSI_distID" Type="Str">{428DBEC3-B03D-4438-9BD8-96901C07EEDB}</Property>
 				<Property Name="MSI_osCheck" Type="Int">0</Property>

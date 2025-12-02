@@ -1,0 +1,11 @@
+# Executables
+*.exe
+*.out
+*.app
+
+# LabVIEW Files
+*.aliases
+*.lvlps
+
+build/*
+slides/*.png
